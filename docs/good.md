@@ -1,0 +1,6 @@
+---
+title: Good
+---
+
+
+<Good />
