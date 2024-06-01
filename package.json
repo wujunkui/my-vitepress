@@ -13,9 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.0",
     "vitepress": "^1.2.2"
   },
   "dependencies": {
+    "@iconify-json/solar": "^1.1.9",
+    "@unocss/preset-attributify": "^0.60.3",
+    "onu-ui": "1.0.14-beta.2",
     "unocss": "^0.60.3",
     "vue": "^3.4.27"
   }

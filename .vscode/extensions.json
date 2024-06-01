@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "antfu.unocss",
+        "formulahendry.auto-close-tag",
+        "esbenp.prettier-vscode",
+        "vue.volar",
+        "github.vscode-github-actions"
+    ]
+}

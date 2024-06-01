@@ -5,6 +5,7 @@ import {
     presetWebFonts,
     transformerDirectives,
     transformerVariantGroup,
+    presetAttributify
   } from 'unocss'
   
   export default defineConfig({
@@ -21,9 +22,11 @@ import {
           sans: 'Inter',
         },
       }),
+      presetAttributify()
     ],
     transformers: [
       transformerDirectives(),
       transformerVariantGroup(),
     ],
+    
   })
