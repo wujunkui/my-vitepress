@@ -1,12 +1,16 @@
+---
+outline: deep
+---
+
 # vitepress 安装 unocss
 
-1. 安装 unocss
+## 1. 安装 unocss
 
 ```shell
 pnpm add unocss
 ```
 
-2. 添加`uno.config.ts`文件
+## 2. 添加`uno.config.ts`文件
 
 ```ts
 import { defineConfig, presetUno } from "unocss"
@@ -16,7 +20,7 @@ export default defineConfig({
 })
 ```
 
-3. 修改`.vitepress/config.ts`文件
+## 3. 修改`.vitepress/config.ts`文件
 
 ```ts{2,6-10}
 import { defineConfig } from "vitepress"
@@ -33,7 +37,7 @@ export default defineConfig({
 
 ```
 
-4. 修改`.vitepress/theme/index.ts`文件
+## 4. 修改`.vitepress/theme/index.ts`文件
 
 ```ts{5}
 // https://vitepress.dev/guide/custom-theme
