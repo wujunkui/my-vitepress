@@ -6,11 +6,13 @@ import { OnuResolver } from "onu-ui"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/my-vitepress/',
   title: "胡思乱想实验室",
   description: "胡思乱想，实现你的奇思妙想。",
   lang: "zh-CN",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    
     nav: [
       { text: "Home", link: "/" },
       { text: "Examples", link: "/markdown-examples" },
