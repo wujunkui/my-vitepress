@@ -4,36 +4,31 @@ import { useData } from "vitepress"
 import BlogContent from "../BlogContent.vue"
 import VPDoc from "vitepress/dist/client/theme-default/components/VPDoc.vue"
 import NavMenu from "./NavMenu.vue"
-
-
+import Footer from "./Footer.vue"
 import { computed } from "vue"
-const { theme, page, dir } = useData()
-console.log(theme.value)
-console.log(page.value)
+
+const { theme, page } = useData()
+
 const filePath = page.value.filePath
-console.log(typeof filePath)
-console.log(filePath.startsWith("blog/"))
 const contentType = computed(() => {
-  return "blog"
+  if (page.value.filePath.startsWith("blog/")) {
+    return "blog"
+  } else {
+    return "shop"
+  }
 })
-
-
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col min-h-vh">
     <NavMenu />
     <div>
       <BlogContent v-if="contentType === 'blog'" />
       <VPDoc v-else></VPDoc>
     </div>
-    
-   
+
     <Footer />
   </div>
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
