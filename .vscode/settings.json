@@ -1,5 +1,9 @@
 {
     "prettier.semi": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.singleQuote": true
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    }
 }

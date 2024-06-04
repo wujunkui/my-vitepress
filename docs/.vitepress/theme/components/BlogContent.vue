@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useData } from "vitepress"
+import AuthorCard from "./AuthorCard.vue";
 
 const { theme } = useData()
 </script>
@@ -14,6 +15,10 @@ const { theme } = useData()
           </main>
         </div>
       </div>
+      <div>
+        <AuthorCard />
+      </div>
+
     </div>
   </div>
 </template>
