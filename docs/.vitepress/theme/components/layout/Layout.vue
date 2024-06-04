@@ -6,8 +6,9 @@ import VPDoc from "vitepress/dist/client/theme-default/components/VPDoc.vue"
 import NavMenu from "./NavMenu.vue"
 import Footer from "./Footer.vue"
 import { computed } from "vue"
+import { NConfigProvider, darkTheme } from "naive-ui"
 
-const { theme, page } = useData()
+const { theme, page, isDark } = useData()
 
 const filePath = page.value.filePath
 const contentType = computed(() => {
@@ -17,17 +18,22 @@ const contentType = computed(() => {
     return "shop"
   }
 })
+
+const naiveTheme = computed(() => isDark.value ? darkTheme : null)
 </script>
 
 <template>
   <div class="flex flex-col min-h-vh">
-    <NavMenu />
-    <div>
-      <BlogContent v-if="contentType === 'blog'" />
-      <VPDoc v-else></VPDoc>
-    </div>
+    <n-config-provider :theme="naiveTheme">
+      <NavMenu />
+      <div>
+        <BlogContent v-if="contentType === 'blog'" />
+        <VPDoc v-else></VPDoc>
+      </div>
 
-    <Footer />
+      <Footer />
+    </n-config-provider>
+
   </div>
 </template>
 
