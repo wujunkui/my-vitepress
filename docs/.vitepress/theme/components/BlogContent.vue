@@ -6,21 +6,20 @@ const { theme } = useData()
 </script>
 
 <template>
-  <div class="VPDoc">
-    <div class="container">
-      <div class="content bg-white dark:bg-[var(--vp-c-bg)] lg:dark:bg-zinc-8">
-        <div class="content-container pt-4">
-          <main class="main">
-            <Content class="vp-doc" />
-          </main>
-        </div>
-      </div>
-      <div>
-        <AuthorCard />
-      </div>
 
+  <div class="max-w-[1440px] flex mt-20 mx-auto">
+    <div class="grow">
+      <main class=" bg-white dark:bg-[var(--vp-c-bg)] lg:dark:bg-zinc-8 p-6">
+        <Content class="vp-doc" />
+      </main>
     </div>
+
+    <div>
+      <AuthorCard />
+    </div>
+
   </div>
+
 </template>
 
 <style lang="scss" scoped>

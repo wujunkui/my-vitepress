@@ -5,5 +5,8 @@
     "prettier.singleQuote": true,
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }

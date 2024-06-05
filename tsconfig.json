@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
@@ -10,16 +10,18 @@
     "resolveJsonModule": true,
     "verbatimModuleSyntax": true,
     "jsx": "preserve",
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["vite/client"],
+    "typeRoots": ["types", "node_modules/"]
   },
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["docs/**/*.ts", "docs/**/*.vue", "./*.ts"],
   "exclude": [
-    "**/node_modules/**",
     "**/dist/**",
     "template",
     "bin",
     "docs/snippets",
-    "scripts"
+    "scripts",
+    "node_modules"
   ],
-  "types": ["node", "vite/client"]
+  "types": ["vite/client"]
 }
