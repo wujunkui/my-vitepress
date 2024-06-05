@@ -7,6 +7,7 @@ import NavMenu from "./NavMenu.vue"
 import Footer from "./Footer.vue"
 import { computed } from "vue"
 import { NConfigProvider, darkTheme } from "naive-ui"
+import type { GlobalThemeOverrides } from 'naive-ui'
 
 const { theme, page, isDark } = useData()
 
@@ -20,11 +21,17 @@ const contentType = computed(() => {
 })
 
 const naiveTheme = computed(() => isDark.value ? darkTheme : null)
+
+const themeOverrides: GlobalThemeOverrides = {
+  common: {
+
+  }
+}
 </script>
 
 <template>
   <div class="flex flex-col min-h-vh">
-    <n-config-provider :theme="naiveTheme">
+    <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
       <NavMenu />
       <div>
         <BlogContent v-if="contentType === 'blog'" />

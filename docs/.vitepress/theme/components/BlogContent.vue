@@ -7,8 +7,8 @@ const { theme } = useData()
 
 <template>
 
-  <div class="max-w-[1440px] flex mt-20 mx-auto">
-    <div class="grow">
+  <div class="max-w-[1440px] flex mt-20 mx-auto p-4">
+    <div class="flex-auto">
       <main class=" bg-white dark:bg-[var(--vp-c-bg)] lg:dark:bg-zinc-8 p-6">
         <Content class="vp-doc" />
       </main>

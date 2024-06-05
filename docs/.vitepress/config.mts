@@ -12,12 +12,16 @@ export default defineConfigWithTheme<MyThemConfig>({
   base: '/my-vitepress/',
   title: '胡思乱想实验室',
   description: '胡思乱想，实现你的奇思妙想。',
+
   lang: 'zh-CN',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
     shop: [],
-
+    author: {
+      name: '胡思乱想的室长',
+      description: '一个想成为数字游民的程序员。'
+    },
     nav: [
       { text: '主页', link: '/' },
       { text: '示例', link: '/markdown-examples' },
