@@ -8,9 +8,10 @@ import Footer from "./Footer.vue"
 import { computed } from "vue"
 import { NConfigProvider, darkTheme } from "naive-ui"
 import type { GlobalThemeOverrides } from 'naive-ui'
+import ShopHome from "../home-page/ShopHome.vue"
 
-const { theme, page, isDark } = useData()
-
+const { theme, page, isDark, frontmatter } = useData()
+const layout = frontmatter.value.layout ?? 'default'
 const filePath = page.value.filePath
 const contentType = computed(() => {
   if (page.value.filePath.startsWith("blog/")) {
@@ -33,7 +34,10 @@ const themeOverrides: GlobalThemeOverrides = {
   <div class="flex flex-col min-h-vh">
     <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
       <NavMenu />
-      <div>
+      <div v-if="layout === 'shop'">
+        <ShopHome />
+      </div>
+      <div v-else>
         <BlogContent v-if="contentType === 'blog'" />
         <VPDoc v-else></VPDoc>
       </div>

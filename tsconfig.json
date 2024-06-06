@@ -14,7 +14,7 @@
     "types": ["vite/client"],
     "typeRoots": ["types", "node_modules/"]
   },
-  "include": ["docs/**/*.ts", "docs/**/*.vue", "./*.ts"],
+  "include": ["docs/**/*.ts", "docs/**/*.vue", "./*.ts", "vite.config.mts"],
   "exclude": [
     "**/dist/**",
     "template",
@@ -22,6 +22,5 @@
     "docs/snippets",
     "scripts",
     "node_modules"
-  ],
-  "types": ["vite/client"]
+  ]
 }

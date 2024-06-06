@@ -11,8 +11,7 @@ const isCustomHome = frontmatter.value.home === true
 </script>
 
 <template>
-  <Home v-if="isCustomHome" />
-  <Layout v-else>
+  <!-- <Home v-if="isCustomHome" /> -->
+  <Layout>
   </Layout>
 </template>
- 

@@ -44,6 +44,7 @@ const NaiveUIProvider = defineComponent({
       {
         default: () => [
           h(MyLayout, null, { default: this.$slots.default?.() }),
+          // @ts-ignore
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null
         ]
       }

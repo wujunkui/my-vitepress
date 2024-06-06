@@ -2,13 +2,20 @@ import type { DefaultTheme } from 'vitepress/theme'
 
 export interface MyThemConfig extends DefaultTheme.Config {
   shop?: any
+  author?: {
+    name: string
+    description: string
+  }
 }
 
 export const themeConfig: MyThemConfig = {
   // https://vitepress.dev/reference/default-theme-config
 
   shop: [],
-
+  author: {
+    name: '胡思乱想的市长',
+    description: '一个想成为数字游民的程序员。'
+  },
   nav: [
     { text: '主页', link: '/' },
     { text: '示例', link: '/markdown-examples' },
