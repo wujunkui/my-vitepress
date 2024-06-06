@@ -1,3 +1,14 @@
+---
+title: git 基于目录设置不同的user.name和user.email
+author: wujunkui
+date: 2024-06-05
+category:
+    - 技术
+tag:
+    - git
+
+---
+
 # git 基于目录设置不同的user.name和user.email
 
 ## 背景

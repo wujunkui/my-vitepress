@@ -3,7 +3,10 @@ import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { OnuResolver } from 'onu-ui'
-import type { MyThemConfig } from './theme'
+import type { MyThemConfig } from './config/theme'
+import { head } from './config/head'
+import { metaData } from './config/meta'
+import { themeConfig } from './config/theme'
 
 const fileAndStyles: Record<string, string> = {}
 
@@ -11,6 +14,7 @@ const fileAndStyles: Record<string, string> = {}
 export default defineConfigWithTheme<MyThemConfig>({
   base: '/my-vitepress/',
   title: '胡思乱想实验室',
+<<<<<<< HEAD
   description: '胡思乱想，实现你的奇思妙想。',
 
   lang: 'zh-CN',
@@ -58,6 +62,13 @@ export default defineConfigWithTheme<MyThemConfig>({
       copyright: 'Copyright © 2023-present wujunkui'
     }
   },
+=======
+  description: metaData.description,
+  lang: metaData.lang,
+  head,
+
+  themeConfig,
+>>>>>>> 1fccc54 (develop)
   vite: {
     plugins: [
       Unocss(),

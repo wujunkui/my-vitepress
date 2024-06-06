@@ -1,7 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 import { h, defineComponent, inject } from 'vue'
 import type { Theme } from 'vitepress'
-import type { DefaultTheme } from 'vitepress/theme'
 import { NConfigProvider } from 'naive-ui'
 import { setup } from '@css-render/vue3-ssr'
 import { useRoute } from 'vitepress'
@@ -13,16 +12,6 @@ import 'onu-ui/dist/style.css'
 import Good from './components/Good.vue'
 import { OButton } from 'onu-ui'
 import MyLayout from './components/layout/MyLayout.vue'
-
-interface Author {
-  name: string
-  description: string
-}
-
-export interface MyThemConfig extends DefaultTheme.Config {
-  shop: any
-  author: Author
-}
 
 const CssRenderStyle = defineComponent({
   setup() {
