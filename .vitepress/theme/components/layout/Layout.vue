@@ -11,8 +11,7 @@ import type { GlobalThemeOverrides } from 'naive-ui'
 import ShopHome from "../home-page/ShopHome.vue"
 
 const { theme, page, isDark, frontmatter } = useData()
-const layout = frontmatter.value.layout ?? 'default'
-const filePath = page.value.filePath
+const layout = computed(() => frontmatter.value.layout ?? 'default')
 const contentType = computed(() => {
   if (page.value.filePath.startsWith("blog/")) {
     return "blog"
@@ -34,13 +33,16 @@ const themeOverrides: GlobalThemeOverrides = {
   <div class="flex flex-col min-h-vh">
     <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
       <NavMenu />
-      <div v-if="layout === 'shop'">
-        <ShopHome />
+      <div class="mt-16 h-[calc(100vh-100px)]">
+        <template v-if="layout === 'shop'">
+          <ShopHome />
+        </template>
+        <template v-else>
+          <BlogContent v-if="contentType === 'blog'" />
+          <VPDoc v-else></VPDoc>
+        </template>
       </div>
-      <div v-else>
-        <BlogContent v-if="contentType === 'blog'" />
-        <VPDoc v-else></VPDoc>
-      </div>
+
 
       <Footer />
     </n-config-provider>

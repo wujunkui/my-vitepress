@@ -1,23 +1,22 @@
 <script setup lang="ts">
 import { data } from '@/data/good.data'
-// import { NCard } from 'naive-ui'
+import { NCard } from 'naive-ui'
 
 
 
 </script>
 
 <template>
-    <div>
-        <template v-for="item, index in data" :key="index">
-            <div v-if="item.frontmatter.home !== true">
+    <div class="flex">
+        <template v-for="{ frontmatter }, index in data" :key="index">
+            <div v-if="frontmatter.home !== true">
                 <n-card>
                     <template #cover>
-                        <img :src="item.frontmatter.img" alt="">
+                        <img :src="frontmatter.img" alt="">
                     </template>
+                    <div>{{ frontmatter.title }}</div>
                 </n-card>
             </div>
-            <div>{{ item.frontmatter }}</div>
-            <!-- <div>{{ item.src }}</div> -->
         </template>
     </div>
 </template>
