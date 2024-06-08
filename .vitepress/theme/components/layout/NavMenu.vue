@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import VPNavBar from 'vitepress/dist/client/theme-default/components/VPNavBar.vue'
 import VPNavScreen from 'vitepress/dist/client/theme-default/components/VPNavScreen.vue'
+// @ts-ignore
 import { useNav } from 'vitepress/dist/client/theme-default/composables/nav.js'
 
 const { isScreenOpen, closeScreen, toggleScreen } = useNav()

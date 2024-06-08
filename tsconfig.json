@@ -12,9 +12,19 @@
     "jsx": "preserve",
     "lib": ["esnext", "dom", "dom.iterable"],
     "types": ["vite/client"],
-    "typeRoots": ["types", "node_modules/"]
+    "typeRoots": ["types", "node_modules/"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [".vitepress/*"]
+    }
   },
-  "include": ["docs/**/*.ts", "docs/**/*.vue", "./*.ts", "vite.config.mts"],
+  "include": [
+    "docs/**/*.ts",
+    "docs/**/*.vue",
+    ".vitepress/**/*.ts",
+    "./*.ts",
+    "vite.config.mts"
+  ],
   "exclude": [
     "**/dist/**",
     "template",
