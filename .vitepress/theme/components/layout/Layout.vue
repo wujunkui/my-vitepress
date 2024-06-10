@@ -21,6 +21,7 @@ const contentType = computed(() => {
 })
 
 const naiveTheme = computed(() => isDark.value ? darkTheme : null)
+const bgClass = computed(() => isDark.value ? "" : "bg-white")
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
@@ -33,7 +34,7 @@ const themeOverrides: GlobalThemeOverrides = {
   <div class="flex flex-col min-h-vh">
     <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
       <NavMenu />
-      <div class="mt-16 h-[calc(100vh-100px)]">
+      <div class="mt-16 h-[calc(100vh-100px)] max-w-[1440px] mx-auto">
         <template v-if="layout === 'shop'">
           <ShopHome />
         </template>

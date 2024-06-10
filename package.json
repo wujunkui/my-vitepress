@@ -17,6 +17,7 @@
     "@css-render/vue3-ssr": "^0.15.14",
     "@types/lodash": "^4.17.4",
     "@types/node": "^20.13.0",
+    "@vicons/ionicons5": "^0.12.0",
     "glob": "^10.4.1",
     "lodash": "^4.17.21",
     "sass": "^1.77.4",

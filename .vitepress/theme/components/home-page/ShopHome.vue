@@ -1,6 +1,7 @@
 <script setup lang="ts">
+
 import { data } from '@/data/good.data'
-import { NCard } from 'naive-ui'
+import ShopItemCard from './components/ShopItemCard.vue'
 
 
 
@@ -9,13 +10,19 @@ import { NCard } from 'naive-ui'
 <template>
     <div class="flex">
         <template v-for="{ frontmatter }, index in data" :key="index">
-            <div v-if="frontmatter.home !== true">
-                <n-card>
-                    <template #cover>
-                        <img :src="frontmatter.img" alt="">
-                    </template>
-                    <div>{{ frontmatter.title }}</div>
-                </n-card>
+            <div v-if="frontmatter.home !== true" class="flex flex-wrap -m-2">
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
+                <ShopItemCard :frontmatter="frontmatter" class="m-2" />
             </div>
         </template>
     </div>
