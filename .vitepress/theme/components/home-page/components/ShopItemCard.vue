@@ -6,6 +6,7 @@ import { BatteryCharging } from '@vicons/ionicons5'
 
 interface Props {
     frontmatter: any
+    href?: string
 }
 const props = defineProps<Props>()
 </script>
@@ -14,15 +15,14 @@ const props = defineProps<Props>()
     <n-card class="mt-4 w-64 rounded-xl" hoverable>
         <template #cover>
             <div class="h-48">
-                <a href="#">
-                    <img :src="withBase(props.frontmatter.image)" alt="">
+                <a :href="props.href">
+                    <img :src="withBase(props.frontmatter.image)" alt="{{ props.frontmatter.title }}">
                 </a>
             </div>
         </template>
 
         <h2 class="mt-2 line-clamp-2 h-[56px]">
-            <a class="font-bold text-lg hover:underline" href="#">{{ props.frontmatter.title
-                }}</a>
+            <a class="font-bold text-lg hover:underline" href="#">{{ props.frontmatter.title }}</a>
         </h2>
         <div class="flex justify-between items-center mt-4">
             <div class="text-lg font-bold flex items-center">
