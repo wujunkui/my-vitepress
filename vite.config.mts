@@ -16,9 +16,18 @@ export default defineConfig({
     })
   ],
   ssr: { noExternal: ['naive-ui', 'date-fns', 'vueuc'] },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true
+      }
+    }
+  },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './.vitepress')
+      '@': resolve(__dirname, './.vitepress'),
+      '@client': resolve(__dirname, '.vitepress/client')
     }
   }
 })
