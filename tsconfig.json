@@ -13,10 +13,10 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "types": ["vite/client"],
     "typeRoots": ["types", "node_modules/"],
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": [".vitepress/*"],
-      "@client/*": [".vitepress/client/*"]
+      "@/*": ["./.vitepress/*"],
+      "@client/*": ["./.vitepress/client/*"]
     }
   },
   "include": [
