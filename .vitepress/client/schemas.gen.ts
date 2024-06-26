@@ -182,6 +182,26 @@ export const $ProductStatus = {
     title: 'ProductStatus'
 } as const;
 
+export const $RegisterUser = {
+    properties: {
+        name: {
+            type: 'string',
+            title: 'Name'
+        },
+        password: {
+            type: 'string',
+            title: 'Password'
+        },
+        ensure_password: {
+            type: 'string',
+            title: 'Ensure Password'
+        }
+    },
+    type: 'object',
+    required: ['name', 'password', 'ensure_password'],
+    title: 'RegisterUser'
+} as const;
+
 export const $UserOut = {
     properties: {
         name: {

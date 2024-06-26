@@ -9,7 +9,7 @@
     "dev": "vitepress dev ",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "gen-client": "openapi-ts --input http://localhost:8000/openapi-client.json --output ./.vitepress/client --client axios"
+    "gen-client": "openapi-ts"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +31,8 @@
   "dependencies": {
     "@iconify-json/solar": "^1.1.9",
     "@unocss/preset-attributify": "^0.60.3",
+    "@vueuse/core": "^10.11.0",
+    "@vueuse/router": "^10.11.0",
     "axios": "^1.7.2",
     "naive-ui": "^2.38.2",
     "onu-ui": "1.0.14-beta.2",

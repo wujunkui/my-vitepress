@@ -43,6 +43,12 @@ export type ProductIn = {
 
 export type ProductStatus = 'active' | 'offline';
 
+export type RegisterUser = {
+    name: string;
+    password: string;
+    ensure_password: string;
+};
+
 export type UserOut = {
     name: string;
     id: number;
@@ -66,9 +72,7 @@ export type GetNavDatasResponse = unknown;
 export type CreateNavDataResponse = unknown;
 
 export type RegisterData = {
-    ensurePassword: string;
-    name: string;
-    password: string;
+    requestBody: RegisterUser;
 };
 
 export type RegisterResponse = UserOut;
@@ -100,12 +104,12 @@ export type CreateOrderData = {
 
 export type CreateOrderResponse = Order;
 
-export type UpdateOrderData = {
+export type UpdateOrderPayStatusData = {
     orderNo: string;
     payStatus: PayStatus;
 };
 
-export type UpdateOrderResponse = Order;
+export type UpdateOrderPayStatusResponse = Order;
 
 export type GetWalletResponse = Wallet;
 
@@ -224,9 +228,9 @@ export type $OpenApiTs = {
             };
         };
     };
-    '/api/v1/shop/order/{order_no}': {
+    '/api/v1/shop/order_pay_status/{order_no}': {
         put: {
-            req: UpdateOrderData;
+            req: UpdateOrderPayStatusData;
             res: {
                 /**
                  * Successful Response

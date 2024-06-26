@@ -3,6 +3,7 @@ import { useRoute } from "vitepress"
 import { useData } from "vitepress"
 import BlogContent from "../BlogContent.vue"
 import VPDoc from "vitepress/dist/client/theme-default/components/VPDoc.vue"
+import { Content } from "vitepress"
 import NavMenu from "./NavMenu.vue"
 import Footer from "./Footer.vue"
 import { computed } from "vue"
@@ -38,6 +39,9 @@ const themeOverrides: GlobalThemeOverrides = {
         <template v-if="layout === 'shop'">
           <ShopHome />
         </template>
+        <template v-else-if="layout === 'page'">
+          <Content />
+        </template>
         <template v-else>
           <BlogContent v-if="contentType === 'blog'" />
           <VPDoc v-else></VPDoc>
@@ -45,7 +49,7 @@ const themeOverrides: GlobalThemeOverrides = {
       </div>
 
 
-      <Footer />
+      <Footer></Footer>
     </n-config-provider>
 
   </div>
