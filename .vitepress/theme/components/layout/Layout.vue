@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vitepress"
 import { useData } from "vitepress"
 import BlogContent from "../BlogContent.vue"
 import VPDoc from "vitepress/dist/client/theme-default/components/VPDoc.vue"
