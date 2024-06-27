@@ -9,6 +9,7 @@ import { computed } from "vue"
 import { NConfigProvider, darkTheme } from "naive-ui"
 import type { GlobalThemeOverrides } from 'naive-ui'
 import ShopHome from "../home-page/ShopHome.vue"
+import { useRegisterStore } from '../../stores'
 
 const { theme, page, isDark, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout ?? 'default')
@@ -22,6 +23,7 @@ const contentType = computed(() => {
 
 const naiveTheme = computed(() => isDark.value ? darkTheme : null)
 const bgClass = computed(() => isDark.value ? "" : "bg-white")
+const { toggleRegister } = useRegisterStore()
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
@@ -33,7 +35,11 @@ const themeOverrides: GlobalThemeOverrides = {
 <template>
   <div class="flex flex-col min-h-vh">
     <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
-      <NavMenu />
+      <NavMenu>
+        <template #nav-bar-content-after>
+          <o-button @click="toggleRegister">注册</o-button>
+        </template>
+      </NavMenu>
       <div class="mt-16 h-[calc(100vh-100px)] max-w-[1440px] mx-auto">
         <template v-if="layout === 'shop'">
           <ShopHome />

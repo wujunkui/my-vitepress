@@ -12,6 +12,8 @@ import 'onu-ui/dist/style.css'
 import Good from './components/Good.vue'
 import { OButton } from 'onu-ui'
 import MyLayout from './components/layout/MyLayout.vue'
+import { createPinia } from 'pinia'
+const pinia = createPinia()
 
 const CssRenderStyle = defineComponent({
   setup() {
@@ -60,6 +62,7 @@ export default {
     app.component('Good', Good)
     app.component('OButton', OButton)
     const { collect } = setup(app)
+    app.use(pinia)
     app.provide('css-render-collect', collect)
   }
 } satisfies Theme

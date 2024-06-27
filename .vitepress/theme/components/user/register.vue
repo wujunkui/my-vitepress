@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { NForm, NFormItem, NInput, NButton, useMessage, NCheckbox } from 'naive-ui'
+import { NForm, NFormItem, NInput, NButton, useMessage, NCheckbox, NIcon } from 'naive-ui'
 import { DefaultService } from '../../../client'
 import type { RegisterUser } from '../../../client'
 import { ref } from 'vue';
-import { useRouter, withBase } from 'vitepress'
+import { withBase } from 'vitepress'
+import { Close } from '@vicons/ionicons5';
+import { useRegisterStore } from '../../stores'
 
 const info = ref<RegisterUser>({ name: '', password: '', ensure_password: '' })
 const message = useMessage()
-const router = useRouter()
+const { toggleRegister } = useRegisterStore()
 const submit = async () => {
-    // const urlParams = new URLSearchParams(window.location.search)
-    // const toUrl = urlParams.get('redirect') || '/'
     try {
         const res = await DefaultService.register({ requestBody: info.value })
     } catch (e: any) {
@@ -21,20 +21,25 @@ const submit = async () => {
         return
     }
     message.success('注册成功')
-    // router.go(toUrl)
+    toggleRegister()
 }
 
 </script>
 
 <template>
     <div class="bg-[var(--vp-c-bg)] flex">
-        <div class="flex-none w-64 opacity-75">
+        <div class="flex-none w-72 opacity-75">
             <img class="w-full h-full object-cover" :src="withBase('/register.png')" alt="注册时候的图片">
         </div>
         <div class="grow p-6">
+            <div class="float-right ">
+                <n-icon size="20" class="hover:bg-gray-100 cursor-pointer" @click="toggleRegister">
+                    <Close />
+                </n-icon>
+            </div>
             <div class="text-center">
                 <span>胡思乱想实验室</span>
-                <p class="mt-4 text-xs opacity-50">注册</p>
+                <p class="mt-4 text-xs opacity-50">注 册</p>
             </div>
             <n-form class="" :model="info">
                 <n-form-item label="用户名">
@@ -56,8 +61,8 @@ const submit = async () => {
                         <a class="ml-1" href="#">隐私政策</a></span>
                 </div>
 
-                <n-button class="w-full font-bold mt-4" @click="submit" type="primary">快 速 注 册</n-button>
-                <div class="flex justify-between text-sm mt-2">
+                <n-button class="w-full text-base font-bold mt-4" @click="submit" type="primary">快 速 注 册</n-button>
+                <div class="flex justify-between text-xs mt-4">
                     <a href="">忘记密码？</a>
                     <span><span>已有账号？直接</span><a class="ml-1" :href="withBase('/user/login')">登录</a></span>
 
