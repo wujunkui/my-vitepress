@@ -55,8 +55,7 @@ export class DefaultService {
     /**
      * Login
      * @param data The data for the request.
-     * @param data.name
-     * @param data.password
+     * @param data.requestBody
      * @returns UserOut Successful Response
      * @throws ApiError
      */
@@ -64,10 +63,8 @@ export class DefaultService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/api/v1/auth/login',
-            query: {
-                name: data.name,
-                password: data.password
-            },
+            body: data.requestBody,
+            mediaType: 'application/json',
             errors: {
                 422: 'Validation Error'
             }

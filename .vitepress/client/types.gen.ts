@@ -4,6 +4,11 @@ export type HTTPValidationError = {
     detail?: Array<ValidationError>;
 };
 
+export type LoginUser = {
+    name: string;
+    password: string;
+};
+
 export type Order = {
     id: number;
     order_no?: string;
@@ -78,8 +83,7 @@ export type RegisterData = {
 export type RegisterResponse = UserOut;
 
 export type LoginData = {
-    name: string;
-    password: string;
+    requestBody: LoginUser;
 };
 
 export type LoginResponse = UserOut;

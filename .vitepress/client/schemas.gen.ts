@@ -14,6 +14,22 @@ export const $HTTPValidationError = {
     title: 'HTTPValidationError'
 } as const;
 
+export const $LoginUser = {
+    properties: {
+        name: {
+            type: 'string',
+            title: 'Name'
+        },
+        password: {
+            type: 'string',
+            title: 'Password'
+        }
+    },
+    type: 'object',
+    required: ['name', 'password'],
+    title: 'LoginUser'
+} as const;
+
 export const $Order = {
     properties: {
         id: {

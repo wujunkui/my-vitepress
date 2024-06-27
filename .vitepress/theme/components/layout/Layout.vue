@@ -9,9 +9,9 @@ import { computed } from "vue"
 import { NConfigProvider, darkTheme } from "naive-ui"
 import type { GlobalThemeOverrides } from 'naive-ui'
 import ShopHome from "../home-page/ShopHome.vue"
-import { useRegisterStore } from '../../stores'
+import { useLoginStore, useRegisterStore } from '../../stores'
 
-const { theme, page, isDark, frontmatter } = useData()
+const { page, isDark, frontmatter } = useData()
 const layout = computed(() => frontmatter.value.layout ?? 'default')
 const contentType = computed(() => {
   if (page.value.filePath.startsWith("blog/")) {
@@ -22,8 +22,8 @@ const contentType = computed(() => {
 })
 
 const naiveTheme = computed(() => isDark.value ? darkTheme : null)
-const bgClass = computed(() => isDark.value ? "" : "bg-white")
 const { toggleRegister } = useRegisterStore()
+const { toggleLogin } = useLoginStore()
 
 const themeOverrides: GlobalThemeOverrides = {
   common: {
@@ -37,6 +37,7 @@ const themeOverrides: GlobalThemeOverrides = {
     <n-config-provider :theme="naiveTheme" :them-overrides="themeOverrides">
       <NavMenu>
         <template #nav-bar-content-after>
+          <o-button @click="toggleLogin">登录</o-button>
           <o-button @click="toggleRegister">注册</o-button>
         </template>
       </NavMenu>

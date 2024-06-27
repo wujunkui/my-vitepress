@@ -12,3 +12,10 @@ export const useRegisterStore = defineStore('register', () => {
     toggleRegister
   }
 })
+
+export const useLoginStore = defineStore('login', () => {
+  const loginShow = ref(false)
+  const toggleLogin = () => (loginShow.value = !loginShow.value)
+
+  return { loginShow, toggleLogin }
+})
