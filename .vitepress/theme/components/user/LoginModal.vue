@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import { NModal } from 'naive-ui'
-import { useLoginStore } from '../../stores'
+import { useLoginStore, useRegisterStore } from '../../stores'
 import FormLayout from './components/FormLayout.vue'
 import { NForm, NFormItem, NInput, NButton, useMessage } from 'naive-ui'
 import { DefaultService } from '../../../client'
 import type { LoginUser } from '../../../client'
+import AgreeRule from './components/AgreeRule.vue'
 import { ref } from 'vue'
 
 const loginStore = useLoginStore()
+const { toggleRegister } = useRegisterStore()
 const message = useMessage()
 const info = ref<LoginUser>({
     name: '',
     password: '',
 })
+const agreeRule = ref(false)
+
 const submit = () => {
     DefaultService.login({ requestBody: info.value })
         .then((res) => {
@@ -23,11 +27,15 @@ const submit = () => {
             message.error(err.message)
         })
 }
+const changeToRegister = () => {
+    loginStore.toggleLogin()
+    toggleRegister()
+}
 </script>
 
 <template>
     <n-modal v-model:show="loginStore.loginShow">
-        <FormLayout title="登 录" :closeClick="toggleLogin">
+        <FormLayout title="登 录" :closeClick="loginStore.toggleLogin">
 
             <n-form class="" :model="info">
                 <n-form-item label="用户名">
@@ -41,7 +49,7 @@ const submit = () => {
                 <n-button class="w-full text-base font-bold mt-4" @click="submit" type="primary">快 速 登 录</n-button>
                 <div class="flex justify-between text-xs mt-4">
                     <a href="">忘记密码？</a>
-                    <span><span>没有账号？直接</span><a class="ml-1" :href="withBase('/user/login')">注册</a></span>
+                    <span><span>没有账号？直接</span><a class="ml-1 cursor-pointer" @click="changeToRegister">注册</a></span>
 
                 </div>
 

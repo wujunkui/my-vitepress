@@ -6,7 +6,10 @@ export const head: HeadConfig[] = [
   ['meta', { name: 'author', content: 'Charles7c' }],
   [
     'meta',
-    { name: 'keywords', content: '查尔斯的知识库, 知识库, 博客, Charles7c' }
+    {
+      name: 'keywords',
+      content: '不工作只挣钱研究院, 知识库, 博客, 不工作只挣钱'
+    }
   ],
 
   ['meta', { name: 'HandheldFriendly', content: 'True' }],

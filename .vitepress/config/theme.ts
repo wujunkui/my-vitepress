@@ -13,7 +13,7 @@ export const themeConfig: MyThemConfig = {
 
   shop: [],
   author: {
-    name: '胡思乱想的市长',
+    name: '胡思乱想的室长',
     description: '一个想成为数字游民的程序员。'
   },
   nav: [
@@ -49,6 +49,6 @@ export const themeConfig: MyThemConfig = {
   },
   footer: {
     message: '<a>蜀XXXXXXXXXXX-1</a>',
-    copyright: 'Copyright © 2023-present 胡思乱想实验室'
+    copyright: 'Copyright © 2023-present 不工作只挣钱研究院'
   }
 }
