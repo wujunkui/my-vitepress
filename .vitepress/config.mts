@@ -12,7 +12,7 @@ const fileAndStyles: Record<string, string> = {}
 export default defineConfigWithTheme<MyThemConfig>({
   srcDir: './docs',
   base: '/my-vitepress/',
-  title: '不工作只挣钱探索站',
+  title: metaData.title,
   description: metaData.description,
   lang: metaData.lang,
   head,

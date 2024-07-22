@@ -19,7 +19,7 @@ export const themeConfig: MyThemConfig = {
   nav: [
     { text: '主页', link: '/' },
     { text: '示例', link: '/markdown-examples' },
-    { text: '博客', link: '/blog/vitepress-unocss' },
+    { text: '博客', link: '/blog/' },
     { text: '小商店', link: '/shop/' }
   ],
 
